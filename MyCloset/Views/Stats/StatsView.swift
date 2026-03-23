@@ -1,3 +1,4 @@
+import Foundation
 import SwiftData
 import SwiftUI
 
@@ -34,7 +35,7 @@ struct StatsView: View {
                 )
                 StatCard(
                     title: "有效衣物总价值",
-                    valueText: "¥\(activeTotalValue, specifier: "%.2f")",
+                    valueText: "¥" + String(format: "%.2f", activeTotalValue),
                     icon: "yensign.circle"
                 )
 
@@ -49,7 +50,7 @@ struct StatsView: View {
                 )
                 StatCard(
                     title: "沉没成本总计",
-                    valueText: "¥\(archivedSunkCost, specifier: "%.2f")",
+                    valueText: "¥" + String(format: "%.2f", archivedSunkCost),
                     icon: "exclamationmark.triangle"
                 )
 
@@ -82,7 +83,7 @@ struct StatsView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text("\(item.mainCategory) · \(item.subCategory)")
                     .font(.subheadline)
-                Text("¥\(item.price, specifier: "%.2f")")
+                Text("¥" + String(format: "%.2f", item.price))
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }

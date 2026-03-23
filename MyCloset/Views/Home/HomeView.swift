@@ -1,3 +1,4 @@
+import Foundation
 import SwiftData
 import SwiftUI
 
@@ -148,7 +149,7 @@ struct CategoryDetailView: View {
                     .font(.caption2)
                     .lineLimit(1)
                 Spacer(minLength: 0)
-                Text("¥\(item.price, specifier: "%.0f")")
+                Text("¥" + String(format: "%.0f", item.price))
                     .font(.caption2)
                     .foregroundStyle(.secondary)
             }
